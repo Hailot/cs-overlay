@@ -1,0 +1,14 @@
+/.vscode
+*.sublime-project
+*.sublime-workspace
+
+# idea
+.idea
+
+# npm
+node_modules
+*.log
+
+# config (private files)
+/api_key.js
+/password.js
