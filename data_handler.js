@@ -33,4 +33,8 @@ function dealWithTheData(raw) {
     }
 }
 
+function isPlayerDeath(data){
+    
+}
+
 exports.dealWithTheData = dealWithTheData;
