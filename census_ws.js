@@ -1,19 +1,19 @@
 const WebSocket   = require('ws');
-const api_key   = require('./api_key.js');
 const painter     = require('./painter.js');
+const dataHandler = require('./data_handler.js');
 
 
 
 function createStream() {
-    const ws = new WebSocket('wss://push.planetside2.com/streaming?environment=ps2&service-id=s:' + api_key.KEY);
+    const ws = new WebSocket('wss://push.planetside2.com/streaming?environment=ps2&service-id=s:hailotApi');
     ws.on('open', function open() {
         console.log('Stream opened...');
         subscribe(ws);
     });
     ws.on('message', function (data) {
         if (data.indexOf("payload") === 2) {
-         //   dealWithTheData(data);
-         console.log(data);
+          dataHandler.dealWithTheData(data);
+        //  console.log(data);
         }
     });
     captures = 0;
